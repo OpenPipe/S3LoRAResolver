@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vllm-s3-lora-resolver"
+authors = [{name = "OpenPipe Team"}]
+version = "0.1.0"
+description = "S3 LoRA resolver plugin for vLLM"
+readme = "README.md"
+requires-python = ">=3.9,<3.13"
+dependencies = [
+  "vllm>=0.8.4",
+  "s3fs>=2024.5.0"
+]
+
+[project.entry-points."vllm.general_plugins"]
+s3_resolver_plugin = "s3_lora_resolver_plugin.resolver:register"
